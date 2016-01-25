@@ -4,7 +4,7 @@ import Header from './Header';
 class App extends React.Component{
 	constructor(){
 		super();
-		this.state = {txt: "Default...", num: 5};
+		this.state = {txt: "<default_message>", num: 5};
 	}
 	update(e){
 		this.setState({txt: e.target.value});
