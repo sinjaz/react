@@ -9,6 +9,9 @@ class App extends React.Component{
 	update(e){
 		this.setState({txt: e.target.value});
 	}
+	onClick(e){
+		store.dispatch({ type: 'ADD', data: this.state.txt });
+	}
 	render(){
 		return (
 			<div>
@@ -16,6 +19,7 @@ class App extends React.Component{
 				<div>
 					<input type="text" onChange={this.update.bind(this)}/>
 					<div>Message: {this.state.txt}</div>
+					<button onClick={this.onClick.bind(this)}>Add</button>
 				</div>
 			</div>
 		)
