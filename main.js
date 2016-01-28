@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createStore } from 'redux';
 
+window.store = createStore(counter);
+
 ReactDOM.render(<App />, document.getElementById('app'));
 
 
@@ -18,8 +20,6 @@ function counter(state = [], action) {
     return state;
   }
 }
-
-window.store = createStore(counter);
 
 store.subscribe(() =>
   console.log("STATE", store.getState())
